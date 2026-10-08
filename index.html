@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>East Hull Falcons Safeguarding Hub</title>
+<meta name="description" content="Who to tell about a safeguarding concern at East Hull Falcons FC, with the club's policies, codes of conduct and rules.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/crest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caveat+Brush&display=swap">
+<style>
+body{margin:0} img{max-width:100%}
+</style>
+<style>
+/* Layout: one phone-first reading column; black kit-coloured masthead, then who to tell, then the documents. */
+:root {
+  --paper: #ffffff;
+  --panel: #f4f3ee;
+  --ink: #141414;
+  --ink-soft: #55534c;
+  --rule: #dcd9cf;
+  --mast: #0d0d0d;
+  --mast-ink: #ffffff;
+  --gold: #d3b556;
+  --gold-ink: #75590c;
+  --alert: #a3140c;
+  --alert-ground: #fdeceb;
+  --logo-ground: #ffffff;
+  --display: "Caveat Brush", "Comic Sans MS", "Segoe Print", cursive;
+  --body: "Atkinson Hyperlegible", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121211; --panel: #1e1e1c; --ink: #f1efe8; --ink-soft: #b3b0a6; --rule: #3a3934;
+    --mast: #000000; --mast-ink: #ffffff; --gold: #d3b556; --gold-ink: #e2c873;
+    --alert: #ffb4ab; --alert-ground: #3b1512; --logo-ground: #ffffff; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121211; --panel: #1e1e1c; --ink: #f1efe8; --ink-soft: #b3b0a6; --rule: #3a3934;
+  --mast: #000000; --mast-ink: #ffffff; --gold: #d3b556; --gold-ink: #e2c873;
+  --alert: #ffb4ab; --alert-ground: #3b1512; --logo-ground: #ffffff; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.5; }
+a { color: inherit; text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; margin: 0; text-wrap: balance; }
+p, ul, ol { margin: 0; }
+
+.mast { background: var(--mast); color: var(--mast-ink); padding-inline: 16px; padding-block: 22px 20px; }
+.mast-in { max-width: 44rem; margin-inline: auto; display: flex; gap: 16px; align-items: center; }
+.mast img { width: 84px; height: 84px; border-radius: 50%; flex: none; }
+.mast-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.strap { font-family: var(--display); color: var(--gold); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1rem; }
+.mast h1 { font-size: 1.9rem; }
+.jump { max-width: 44rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.jump a { font-size: 0.9375rem; text-decoration: none; border: 1px solid var(--gold); color: var(--mast-ink); padding: 6px 12px; border-radius: 999px; }
+
+.wrap { max-width: 44rem; margin-inline: auto; padding-inline: 16px; padding-block: 20px 40px; display: flex; flex-direction: column; gap: 34px; }
+section { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 12px; }
+section > h2 { font-size: 1.7rem; }
+h3 { font-size: 1.3rem; }
+.lede { font-size: 1.125rem; }
+.soft { color: var(--ink-soft); }
+ul.plain, ol.steps { padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; }
+
+.alert { background: var(--alert-ground); border-left: 6px solid var(--alert); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.alert h2 { color: var(--alert); font-size: 1.5rem; }
+.alert .big { font-weight: 700; font-size: 1.25rem; }
+.numlist { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.person { background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.person-top { display: flex; gap: 14px; align-items: center; }
+.person-top img { width: 76px; height: 76px; border-radius: 50%; object-fit: cover; flex: none; }
+.person-top div { min-width: 0; }
+.person .role { font-weight: 700; }
+.person .where { color: var(--ink-soft); font-size: 0.9375rem; }
+.reach { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.reach li, .line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.val { font-weight: 700; overflow-wrap: anywhere; min-width: 0; user-select: all; }
+.copy { font: inherit; font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--ink-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+
+.outside { list-style: none; padding: 0; display: flex; flex-direction: column; }
+.outside li { padding-block: 12px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 4px; }
+.outside li:last-child { border-bottom: 1px solid var(--rule); }
+.outside .who { font-weight: 700; }
+
+.group { display: flex; flex-direction: column; gap: 8px; }
+details.doc { border: 1px solid var(--rule); }
+details.doc > summary { cursor: pointer; padding: 12px 14px; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; list-style: none; }
+details.doc > summary::-webkit-details-marker { display: none; }
+details.doc > summary .t { font-weight: 700; }
+details.doc > summary .t::before { content: "+ "; color: var(--gold-ink); font-weight: 700; }
+details.doc[open] > summary .t::before { content: "\2212  "; }
+details.doc > summary .n { color: var(--ink-soft); font-size: 0.875rem; white-space: nowrap; }
+.pdf { padding: 0 14px 10px; font-weight: 700; }
+.pages { display: flex; flex-direction: column; gap: 10px; padding: 0 10px 12px; }
+.pages img { display: block; width: 100%; height: auto; background: #ffffff; border: 1px solid var(--rule); }
+
+.share { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.share img { width: 132px; height: 132px; background: #ffffff; padding: 6px; flex: none; }
+.share div { min-width: 0; flex: 1 1 14rem; display: flex; flex-direction: column; gap: 6px; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 18px; display: flex; flex-direction: column; gap: 12px; font-size: 0.9375rem; color: var(--ink-soft); }
+.logos { background: var(--logo-ground); padding: 10px 14px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; align-self: flex-start; }
+.logos img { height: 34px; width: auto; }
+@media (max-width: 420px) { .mast h1 { font-size: 1.6rem; } .mast img { width: 68px; height: 68px; } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <img src="img/crest.png" alt="East Hull Falcons Football Club crest" width="84" height="84">
+    <div class="mast-text">
+      <span class="strap">Teamwork, Respect &amp; Fair Play</span>
+      <h1>Safeguarding &amp; club policies</h1>
+    </div>
+  </div>
+  <nav class="jump" aria-label="On this page">
+    <a href="#contacts">Who to tell</a>
+    <a href="#players">For players</a>
+    <a href="#documents">Policies &amp; codes</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <section class="alert" aria-labelledby="h-now">
+    <h2 id="h-now">If a child is in immediate danger</h2>
+    <p class="big">Call the police on 999. Don't wait to speak to the club first.</p>
+    <p>For an urgent concern about a child in Hull, you can also call children's social care:</p>
+    <ul class="numlist">
+      <li class="line"><span>Early Help and Safeguarding Hub (EHASH):</span> <a class="val" href="tel:01482448879">01482 448 879</a> <span>option 4</span></li>
+      <li class="line"><span>Emergency Duty Team (out of hours):</span> <a class="val" href="tel:01482300304">01482 300 304</a></li>
+    </ul>
+    <p>Once the child is safe, let Tom or Eleanor know so the club can follow up.</p>
+  </section>
+
+  <section id="contacts" aria-labelledby="h-contacts">
+    <h2 id="h-contacts">Worried about a child? Tell us</h2>
+    <p class="lede">For any worry about a child's safety or wellbeing at East Hull Falcons, contact Tom or Eleanor. No concern is too small, and you don't need proof.</p>
+    <div class="people">
+      <div class="person">
+        <div class="person-top">
+          <img src="img/tom.jpg" alt="Tom Lee" width="76" height="76">
+          <div>
+            <h3>Tom Lee</h3>
+            <p class="role">Assistant Welfare Officer</p>
+            <p class="where">At U10 and U11 training and matches</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07378775496">07378 775496</a> <button class="copy" type="button" data-copy="07378775496">Copy</button></li>
+          <li><a class="val" href="mailto:tomlee1150@gmail.com">tomlee1150@gmail.com</a> <button class="copy" type="button" data-copy="tomlee1150@gmail.com">Copy</button></li>
+        </ul>
+      </div>
+      <div class="person">
+        <div class="person-top">
+          <img src="img/eleanor.jpg" alt="Eleanor Mullins" width="76" height="76">
+          <div>
+            <h3>Eleanor Mullins</h3>
+            <p class="role">Club Welfare Officer</p>
+            <p class="where">At U16 girls' training and matches</p>
+          </div>
+        </div>
+        <ul class="reach">
+          <li><a class="val" href="tel:07375949618">07375 949618</a> <button class="copy" type="button" data-copy="07375949618">Copy</button></li>
+          <li><a class="val" href="mailto:ellieworsley@hotmail.co.uk">ellieworsley@hotmail.co.uk</a> <button class="copy" type="button" data-copy="ellieworsley@hotmail.co.uk">Copy</button></li>
+        </ul>
+      </div>
+    </div>
+    <p>Tom is the first contact for the U10s and U11s. You can go straight to Eleanor at any time, and you should if your concern involves Tom or a team he coaches. Both are DBS-checked and have completed the FA's safeguarding and welfare officer training.</p>
+    <p>You can also speak to your team's coach at any session. Our coaches are DBS-checked and safeguarding-trained, and will pass your concern to Tom or Eleanor the same day. If your concern is about a coach, go straight to Tom or Eleanor, or use the contacts below.</p>
+    <p>Please don't raise concerns in the WhatsApp community or team chats. Contact Tom or Eleanor directly so the details stay private.</p>
+  </section>
+
+  <section id="outside" aria-labelledby="h-outside">
+    <h2 id="h-outside">If you can't reach them, or the concern involves the club</h2>
+    <p>You can go outside the club at any time. Use these contacts if you can't reach Tom or Eleanor, if your concern is about either of them or someone close to them, or if you feel the club hasn't acted.</p>
+    <ul class="outside">
+      <li><span class="who">East Riding County FA Designated Safeguarding Officer</span>
+        <span class="line"><a class="val" href="mailto:safeguarding@eastridingfa.com">safeguarding@eastridingfa.com</a> <button class="copy" type="button" data-copy="safeguarding@eastridingfa.com">Copy</button></span>
+        <span class="soft">Football's local safeguarding lead, if you would rather not go through the club.</span></li>
+      <li><span class="who"><a href="https://www.thefa.com/football-rules-governance/safeguarding/section-2-reporting-concerns">The FA Safeguarding Team</a></span>
+        <span class="line"><a class="val" href="tel:08001691863">0800 169 1863</a> <span>(leave a message)</span></span>
+        <span class="line"><a class="val" href="mailto:Safeguarding@TheFA.com">Safeguarding@TheFA.com</a> <button class="copy" type="button" data-copy="Safeguarding@TheFA.com">Copy</button></span>
+        <span class="soft">The national body, or if the usual routes haven't worked (whistleblowing).</span></li>
+      <li><span class="who">NSPCC Helpline</span>
+        <span class="line"><a class="val" href="tel:08088005000">0808 800 5000</a></span>
+        <span class="line"><a class="val" href="mailto:help@nspcc.org.uk">help@nspcc.org.uk</a> <button class="copy" type="button" data-copy="help@nspcc.org.uk">Copy</button></span>
+        <span class="soft">If it's urgent and you can't reach the club or County FA, or you want independent advice.</span></li>
+      <li><span class="who"><a href="https://www.hull.gov.uk/children/worried-child">Hull children's social care (EHASH)</a></span>
+        <span class="line"><a class="val" href="tel:01482448879">01482 448 879</a> <span>option 4</span></span>
+        <span class="soft">If your worry is about a child's safety at home or outside football.</span></li>
+    </ul>
+  </section>
+
+  <section id="next" aria-labelledby="h-next">
+    <h2 id="h-next">What happens after you raise a concern</h2>
+    <ol class="steps">
+      <li>Whoever you contact listens and writes down what you tell them, in your own words.</li>
+      <li>They reply within 24 hours to confirm they have it.</li>
+      <li>Tom and Eleanor share concerns with each other so the club keeps one record, unless the concern involves one of them.</li>
+      <li>Eleanor, as Club Welfare Officer, decides whether the club can deal with it or whether it must be referred on, taking advice from the County FA when needed.</li>
+      <li>Serious concerns go to the County FA, The FA, the police or children's social care. The club does not investigate these itself.</li>
+      <li>You are told as much as possible about what happens next.</li>
+    </ol>
+    <p>What you share is kept private and passed only to people who need it to keep a child safe. Records are stored securely by Eleanor, not in club chats or shared inboxes.</p>
+  </section>
+
+  <section id="players" aria-labelledby="h-players">
+    <h2 id="h-players">If you're a player</h2>
+    <p class="lede">If anything at football makes you feel worried, upset, scared or uncomfortable, tell a grown-up you trust. It is never your fault and you won't be in trouble for speaking up.</p>
+    <ul class="plain">
+      <li>Tell your mum, dad or carer, or tell your coach.</li>
+      <li>Tom and Eleanor are the club's safeguarding contacts. Their job is to help keep everyone at the club safe and happy. Your coach or parent can help you talk to them.</li>
+      <li>You can tell them about something happening to you or to a friend.</li>
+      <li>If you'd rather talk to someone outside the club, call Childline free on <a class="val" href="tel:08001111">0800 1111</a> at any time.</li>
+      <li>If someone online makes you uncomfortable, you can report it to <a href="https://www.ceop.police.uk/safety-centre/">CEOP</a>.</li>
+    </ul>
+  </section>
+
+  <section id="told" aria-labelledby="h-told">
+    <h2 id="h-told">If a child tells you something</h2>
+    <p>Stay calm and listen. Your job is to pass it on, not to work out whether it's true.</p>
+    <ul class="plain">
+      <li>Reassure them they have done the right thing by telling you.</li>
+      <li>Explain that you need to tell someone who can help. Don't promise to keep it secret.</li>
+      <li>Don't ask leading questions, investigate, or confront anyone.</li>
+      <li>Write down what was said as soon as you can, using the child's own words.</li>
+      <li>Phone or email Tom or Eleanor the same day, even if neither was at the session, or use the outside contacts above.</li>
+    </ul>
+  </section>
+
+  <section id="documents" aria-labelledby="h-docs">
+    <h2 id="h-docs">Our policies and codes of conduct</h2>
+    <p>Tap a document to read it here, or open it as a PDF to save or print. If you'd like a printed copy, ask your coach.</p>
+    <div class="group">
+      <h3>Policies</h3>
+      <details class="doc" id="safeguarding-children-policy">
+        <summary><span class="t">Safeguarding Children Policy</span><span class="n">3 pages</span></summary>
+        <p class="pdf"><a href="pdf/safeguarding-children-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/safeguarding-children-policy-1.webp" width="1241" height="1754" alt="Safeguarding Children Policy, page 1 of 3">
+          <img loading="lazy" src="docs/safeguarding-children-policy-2.webp" width="1241" height="1754" alt="Safeguarding Children Policy, page 2 of 3">
+          <img loading="lazy" src="docs/safeguarding-children-policy-3.webp" width="1241" height="1754" alt="Safeguarding Children Policy, page 3 of 3">
+        </div>
+      </details>
+      <details class="doc" id="anti-bullying-policy">
+        <summary><span class="t">Anti-Bullying Policy</span><span class="n">3 pages</span></summary>
+        <p class="pdf"><a href="pdf/anti-bullying-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/anti-bullying-policy-1.webp" width="1241" height="1754" alt="Anti-Bullying Policy, page 1 of 3">
+          <img loading="lazy" src="docs/anti-bullying-policy-2.webp" width="1241" height="1754" alt="Anti-Bullying Policy, page 2 of 3">
+          <img loading="lazy" src="docs/anti-bullying-policy-3.webp" width="1241" height="1754" alt="Anti-Bullying Policy, page 3 of 3">
+        </div>
+      </details>
+      <details class="doc" id="equality-policy">
+        <summary><span class="t">Equality Policy</span><span class="n">1 page</span></summary>
+        <p class="pdf"><a href="pdf/equality-policy.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/equality-policy-1.webp" width="1241" height="1754" alt="Equality Policy, page 1 of 1">
+        </div>
+      </details>
+    </div>
+    <div class="group">
+      <h3>Codes of conduct</h3>
+      <details class="doc" id="code-of-conduct-players">
+        <summary><span class="t">Code of Conduct for Players</span><span class="n">1 page</span></summary>
+        <p class="pdf"><a href="pdf/code-of-conduct-players.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/code-of-conduct-players-1.webp" width="1241" height="1754" alt="Code of Conduct for Players, page 1 of 1">
+        </div>
+      </details>
+      <details class="doc" id="code-of-conduct-spectators">
+        <summary><span class="t">Code of Conduct for Spectators</span><span class="n">1 page</span></summary>
+        <p class="pdf"><a href="pdf/code-of-conduct-spectators.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/code-of-conduct-spectators-1.webp" width="1241" height="1754" alt="Code of Conduct for Spectators, page 1 of 1">
+        </div>
+      </details>
+      <details class="doc" id="code-of-conduct-coaches">
+        <summary><span class="t">Code of Conduct for Coaches, Team Managers and Club Officials</span><span class="n">1 page</span></summary>
+        <p class="pdf"><a href="pdf/code-of-conduct-coaches.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/code-of-conduct-coaches-1.webp" width="1241" height="1754" alt="Code of Conduct for Coaches, Team Managers and Club Officials, page 1 of 1">
+        </div>
+      </details>
+      <details class="doc" id="the-grassroots-code">
+        <summary><span class="t">The Grassroots Code (England Football)</span><span class="n">5 pages</span></summary>
+        <p class="pdf"><a href="pdf/the-grassroots-code.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/the-grassroots-code-1.webp" width="1241" height="1754" alt="The Grassroots Code (England Football), page 1 of 5">
+          <img loading="lazy" src="docs/the-grassroots-code-2.webp" width="1241" height="1754" alt="The Grassroots Code (England Football), page 2 of 5">
+          <img loading="lazy" src="docs/the-grassroots-code-3.webp" width="1241" height="1754" alt="The Grassroots Code (England Football), page 3 of 5">
+          <img loading="lazy" src="docs/the-grassroots-code-4.webp" width="1241" height="1754" alt="The Grassroots Code (England Football), page 4 of 5">
+          <img loading="lazy" src="docs/the-grassroots-code-5.webp" width="1241" height="1754" alt="The Grassroots Code (England Football), page 5 of 5">
+        </div>
+      </details>
+    </div>
+    <div class="group">
+      <h3>Club rules</h3>
+      <details class="doc" id="club-rules">
+        <summary><span class="t">Club Rules</span><span class="n">5 pages</span></summary>
+        <p class="pdf"><a href="pdf/club-rules.pdf" target="_blank" rel="noopener">Open or download as a PDF</a></p>
+        <div class="pages">
+          <img loading="lazy" src="docs/club-rules-1.webp" width="1241" height="1754" alt="Club Rules, page 1 of 5">
+          <img loading="lazy" src="docs/club-rules-2.webp" width="1241" height="1754" alt="Club Rules, page 2 of 5">
+          <img loading="lazy" src="docs/club-rules-3.webp" width="1241" height="1754" alt="Club Rules, page 3 of 5">
+          <img loading="lazy" src="docs/club-rules-4.webp" width="1241" height="1754" alt="Club Rules, page 4 of 5">
+          <img loading="lazy" src="docs/club-rules-5.webp" width="1241" height="1754" alt="Club Rules, page 5 of 5">
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="other" aria-labelledby="h-other">
+    <h2 id="h-other">Other questions and complaints</h2>
+    <p>Not every issue is a safeguarding concern. Questions about team selection, playing time or registration go to the Club Secretary or Club Chair.</p>
+    <ul class="outside">
+      <li><span class="who">Rebecca Northage, Club Secretary</span>
+        <span class="line"><a class="val" href="tel:07375240676">07375 240676</a> <button class="copy" type="button" data-copy="07375240676">Copy</button></span>
+        <span class="line"><a class="val" href="mailto:r.northage@outlook.com">r.northage@outlook.com</a> <button class="copy" type="button" data-copy="r.northage@outlook.com">Copy</button></span></li>
+      <li><span class="who">Gary Northage, Club Chair</span>
+        <span class="line"><a class="val" href="tel:07855367186">07855 367186</a> <button class="copy" type="button" data-copy="07855367186">Copy</button></span>
+        <span class="line"><a class="val" href="mailto:garynorthage@hotmail.co.uk">garynorthage@hotmail.co.uk</a> <button class="copy" type="button" data-copy="garynorthage@hotmail.co.uk">Copy</button></span></li>
+    </ul>
+  </section>
+
+  <section id="share" aria-labelledby="h-share">
+    <h2 id="h-share">Share this page</h2>
+    <div class="share">
+      <img src="img/qr.png" alt="QR code that opens this page" width="132" height="132">
+      <div>
+        <p>Ask another parent or coach to scan this code with their phone camera, or send them the link.</p>
+        <p class="line"><span class="val">https://tomlee1150-a11y.github.io/east-hull-falcons/</span> <button class="copy" type="button" data-copy="https://tomlee1150-a11y.github.io/east-hull-falcons/">Copy</button></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="logos">
+      <img src="img/accredited.png" alt="England Football Accredited club" width="113" height="34">
+      <img src="img/respect.png" alt="Respect the Standard" width="62" height="34">
+    </div>
+    <p>East Hull Falcons Football Club. Page last updated 8 October 2026.</p>
+  </footer>
+</div>
+
+<script>
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.copy');
+  if (!b) return;
+  var text = b.getAttribute('data-copy');
+  var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600); };
+  var fallback = function () {
+    var v = b.parentElement.querySelector('.val');
+    if (!v) return;
+    var r = document.createRange(); r.selectNodeContents(v);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    b.textContent = 'Selected';
+    setTimeout(function () { b.textContent = 'Copy'; }, 1600);
+  };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+});
+</script>
+
+</body>
+</html>
