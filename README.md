@@ -2,7 +2,7 @@
 
 The club's safeguarding contacts, reporting guide, policies, codes of conduct and rules, published as a web page for parents, players and coaches.
 
-Live page: https://tomlee1150-a11y.github.io/east-hull-falcons/
+Live page: https://east-hull-falcons-fc.github.io/east-hull-falcons/
 
 - `index.html` is the page.
 - `pdf/` holds the documents as PDFs.
