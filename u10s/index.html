@@ -186,9 +186,9 @@ footer .strap { font-size: 1.1rem; }
       <div class="cal"><small>Sun</small><b>18</b><small>Oct</small></div>
       <div class="opp">Hall Road Rangers Cobras</div>
       <div class="tags"><span class="tag">Away</span><span class="tag">Friendly</span><span class="tag num">Kick-off 12:30</span></div>
-      <div class="soft">St Mary Queen of Martyrs</div>
+      <div class="soft">St Mary Queen of Martyrs, HU7 4BS</div>
     </div>
-    <p class="soft">Every fixture is two 30-minute games. Our home pitch is at Alderman Cogan Primary School, kick-off 10:30. Scores show East Hull Falcons first.</p>
+    <p class="soft">Every fixture is two 30-minute games. Our home pitch is at Alderman Cogan Primary School, kick-off 10:30. Scores show East Hull Falcons first. Tap a postcode to open the venue in Google Maps.</p>
     <ul class="fx" id="fxList"><li><span class="soft">Loading fixtures…</span></li></ul>
     <p class="soft" id="fxUpdated"></p>
   </section>
@@ -420,6 +420,22 @@ footer .strap { font-size: 1.1rem; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
   function res(g) { return g[0] > g[1] ? "W" : g[0] === g[1] ? "D" : "L"; }
 
+  /* venue postcodes (looked up 12 Oct 2026) */
+  var PC = {
+    "St Mary Queen of Martyrs": "HU7 4BS",
+    "Alderman Cogan School": "HU9 3HJ",
+    "Market Weighton School 3G": "YO43 3JF",
+    "Withernsea Primary School": "HU19 2EG",
+    "Pelican Park": "HU8 0EE",
+    "King George V, Hessle": "HU13 9AJ",
+    "Alderman Kneeshaw Park": "HU9 4DU"
+  };
+  function venueHtml(v) {
+    var pc = PC[v];
+    if (!pc) return esc(v);
+    var q = encodeURIComponent(v + ", " + pc);
+    return esc(v) + ', <a href="https://www.google.com/maps/search/?api=1&amp;query=' + q + '">' + pc + '</a>';
+  }
   /* fixtures */
   fetch("fixtures.json", {cache: "no-cache"}).then(function (r) { return r.json(); }).then(function (data) {
     var fx = data.fixtures;
@@ -430,7 +446,7 @@ footer .strap { font-size: 1.1rem; }
       document.getElementById("next").innerHTML = '<div class="cal"><small>' + DY[dd.getDay()] + '</small><b class="num">' + dd.getDate() + '</b><small>' + M[dd.getMonth()] + '</small></div>' +
         '<div class="opp">' + esc(nx.opponent) + '</div>' +
         '<div class="tags"><span class="tag' + (nx.ha === "Home" ? " home" : "") + '">' + esc(nx.ha) + '</span>' + (nx.type !== "League" ? '<span class="tag">' + esc(nx.type) + '</span>' : "") + '<span class="tag num">Kick-off ' + esc(nx.ko || "TBC") + '</span></div>' +
-        '<div class="soft">' + esc(nx.venue) + '</div>';
+        '<div class="soft">' + venueHtml(nx.venue) + '</div>';
     } else {
       document.getElementById("next").innerHTML = '<div class="opp" style="grid-column:1/-1">No more fixtures this phase</div>';
     }
@@ -441,7 +457,7 @@ footer .strap { font-size: 1.1rem; }
       else if (f.g1 || f.g2) r = [f.g1, f.g2].filter(Boolean).map(function (g, i) { return '<span class="score ' + res(g) + '" title="Game ' + (i + 1) + '">' + g[0] + "–" + g[1] + "</span>"; }).join("");
       else r = '<span class="tag num">' + esc(f.ko || "TBC") + '</span>';
       return '<li class="' + (c ? "cancel" : "") + '"><span class="d num">' + dd.getDate() + " " + M[dd.getMonth()] + '<span>' + DY[dd.getDay()] + '</span></span>' +
-        '<span><span class="o">' + esc(f.opponent) + '</span>' + (f.type !== "League" && !c ? ' <span class="tag">' + esc(f.type) + '</span>' : "") + '<br><span class="w">' + esc(f.ha) + " · " + esc(f.venue) + '</span></span>' +
+        '<span><span class="o">' + esc(f.opponent) + '</span>' + (f.type !== "League" && !c ? ' <span class="tag">' + esc(f.type) + '</span>' : "") + '<br><span class="w">' + esc(f.ha) + " · " + venueHtml(f.venue) + '</span></span>' +
         '<span class="r">' + r + '</span></li>';
     }).join("");
     if (data.updated) { var u = d(data.updated); document.getElementById("fxUpdated").textContent = "Updated " + u.getDate() + " " + M[u.getMonth()] + " " + u.getFullYear() + "."; }
