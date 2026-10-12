@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>East Hull Falcons U10s</title>
+<meta name="description" content="East Hull Falcons U10s: fixtures and results, training calendar, matchday information, our playbook and ways to support the club.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../img/crest.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Caveat+Brush&display=swap">
+<style>
+/* Layout: same phone-first column and black masthead as the safeguarding hub; sections run fixtures, training, matchday, playbook, support. */
+:root {
+  --paper: #ffffff;
+  --panel: #f4f3ee;
+  --ink: #141414;
+  --ink-soft: #55534c;
+  --rule: #dcd9cf;
+  --mast: #0d0d0d;
+  --mast-ink: #ffffff;
+  --gold: #d3b556;
+  --gold-ink: #75590c;
+  --yellow: #f2c614;
+  --blue: #4553c3;
+  --pink: #b8226e;
+  --win: #237a4b; --draw: #6b6960; --loss: #b3261e;
+  --display: "Caveat Brush", "Comic Sans MS", "Segoe Print", cursive;
+  --body: "Atkinson Hyperlegible", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121211; --panel: #1e1e1c; --ink: #f1efe8; --ink-soft: #b3b0a6; --rule: #3a3934;
+    --mast: #000000; --mast-ink: #ffffff; --gold: #d3b556; --gold-ink: #e2c873;
+    --yellow: #f2c614; --blue: #8f99f0; --pink: #f07ab4;
+    --win: #5fcf8f; --draw: #b3b0a6; --loss: #ff8a80; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #121211; --panel: #1e1e1c; --ink: #f1efe8; --ink-soft: #b3b0a6; --rule: #3a3934;
+  --mast: #000000; --mast-ink: #ffffff; --gold: #d3b556; --gold-ink: #e2c873;
+  --yellow: #f2c614; --blue: #8f99f0; --pink: #f07ab4;
+  --win: #5fcf8f; --draw: #b3b0a6; --loss: #ff8a80; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.5; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; line-height: 1.1; margin: 0; text-wrap: balance; }
+p, ul, ol { margin: 0; }
+.num { font-variant-numeric: tabular-nums; }
+
+.mast { background: var(--mast); color: var(--mast-ink); padding-inline: 16px; padding-block: 22px 20px; }
+.mast-in { max-width: 48rem; margin-inline: auto; display: flex; gap: 16px; align-items: center; }
+.mast img { width: 84px; height: 84px; border-radius: 50%; flex: none; }
+.mast-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.strap { font-family: var(--display); color: var(--gold); text-transform: uppercase; letter-spacing: 0.04em; font-size: 1rem; }
+.mast h1 { font-size: 2.1rem; }
+.mast .sub { color: #cfcabb; font-size: 0.95rem; }
+.jump { max-width: 48rem; margin-inline: auto; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.jump a { font-size: 0.9375rem; text-decoration: none; border: 1px solid var(--gold); color: var(--mast-ink); padding: 6px 12px; border-radius: 999px; }
+
+.wrap { max-width: 48rem; margin-inline: auto; padding-inline: 16px; padding-block: 22px 44px; display: flex; flex-direction: column; gap: 40px; }
+section { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 12px; }
+section > h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+.lede { font-size: 1.125rem; }
+.soft { color: var(--ink-soft); }
+.panel { background: var(--panel); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+ul.plain { padding-left: 1.3em; display: flex; flex-direction: column; gap: 6px; }
+
+/* next match */
+.next { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 16px; align-items: center; background: var(--panel); padding: 16px; border-left: 6px solid var(--yellow); }
+.next .cal { grid-row: span 3; background: var(--mast); color: var(--mast-ink); text-align: center; padding: 8px 12px; min-width: 70px; }
+.next .cal b { display: block; font-family: var(--display); font-size: 2.3rem; line-height: 1; color: var(--yellow); font-weight: 400; }
+.next .cal small { display: block; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
+.next .opp { font-family: var(--display); font-size: 1.6rem; text-transform: uppercase; line-height: 1.1; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag { font-size: 0.8125rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--rule); }
+.tag.home { background: var(--yellow); color: #1a1405; border-color: var(--yellow); }
+.tag.off { color: var(--loss); border-color: var(--loss); }
+
+/* fixtures list */
+.fx { list-style: none; padding: 0; display: flex; flex-direction: column; }
+.fx li { display: grid; grid-template-columns: 88px minmax(0, 1fr) auto; gap: 4px 14px; padding-block: 12px; border-top: 1px solid var(--rule); align-items: start; }
+.fx li:last-child { border-bottom: 1px solid var(--rule); }
+.fx .d { font-weight: 700; }
+.fx .d span { display: block; font-weight: 400; color: var(--ink-soft); font-size: 0.875rem; }
+.fx .o { font-weight: 700; }
+.fx .w { color: var(--ink-soft); font-size: 0.9375rem; }
+.fx .r { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+.fx li.cancel .o { text-decoration: line-through; color: var(--ink-soft); }
+.score { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 0.9375rem; padding: 1px 8px; border-radius: 4px; color: #fff; white-space: nowrap; }
+.score.W { background: var(--win); } .score.D { background: var(--draw); } .score.L { background: var(--loss); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .score { color: #111; } }
+:root[data-theme="dark"] .score { color: #111; }
+@media (max-width: 520px) { .fx li { grid-template-columns: 70px minmax(0, 1fr); } .fx .r { grid-column: 2; flex-direction: row; align-items: center; } }
+
+/* training calendar */
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.9375rem; }
+.legend span { display: inline-flex; gap: 8px; align-items: center; }
+.legend i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; flex: none; }
+.v-ac { background: var(--pink); } .v-ml { background: var(--yellow); } .v-ph { background: var(--blue); }
+.terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 14px; }
+.term { background: var(--panel); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.term h3 { font-size: 1.25rem; }
+.term ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.term li { display: flex; gap: 8px; align-items: center; font-size: 0.9375rem; }
+.term li i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.term li.past { color: var(--ink-soft); opacity: 0.6; }
+.term li.nextup { font-weight: 700; }
+.term li.nextup::after { content: "Next"; font-size: 0.75rem; background: var(--mast); color: var(--mast-ink); padding: 0 6px; border-radius: 999px; }
+.times { display: grid; gap: 8px; }
+
+/* figures */
+figure { margin: 0; display: flex; flex-direction: column; gap: 6px; }
+figure img { border: 1px solid var(--rule); }
+figcaption { font-size: 0.875rem; color: var(--ink-soft); }
+details.pb { border: 1px solid var(--rule); }
+details.pb > summary { cursor: pointer; padding: 12px 14px; list-style: none; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+details.pb > summary::-webkit-details-marker { display: none; }
+details.pb > summary .t { font-weight: 700; }
+details.pb > summary .t::before { content: "+ "; color: var(--gold-ink); font-weight: 700; }
+details.pb[open] > summary .t::before { content: "\2212  "; }
+details.pb > summary .n { color: var(--ink-soft); font-size: 0.875rem; white-space: nowrap; }
+details.pb .body { padding: 0 14px 14px; display: flex; flex-direction: column; gap: 12px; }
+.strategy { display: grid; gap: 10px; }
+.strategy .row { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 10px; align-items: start; }
+.strategy .k { font-family: var(--display); text-transform: uppercase; font-size: 1.1rem; color: var(--gold-ink); }
+.goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 10px; }
+.goals div { background: var(--panel); padding: 12px; }
+.goals b { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 1.15rem; display: block; }
+.tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.tips .panel h3 { font-size: 1.25rem; }
+.tips ul { padding-left: 1.1em; display: flex; flex-direction: column; gap: 6px; font-size: 0.9688rem; }
+.formats { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 0.9375rem; }
+th, td { padding: 8px; border-bottom: 1px solid var(--rule); text-align: left; white-space: nowrap; }
+th { font-weight: 700; }
+td.now { background: var(--panel); font-weight: 700; }
+
+/* support */
+.areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; }
+.areas .panel h3 { font-size: 1.25rem; }
+.areas ul { padding-left: 1.1em; display: flex; flex-direction: column; gap: 4px; font-size: 0.9375rem; }
+.give { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; background: var(--panel); padding: 16px; border-left: 6px solid var(--yellow); }
+.give img { width: 120px; height: 120px; background: #fff; padding: 6px; border: 0; }
+.line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.val { font-weight: 700; overflow-wrap: anywhere; min-width: 0; user-select: all; }
+.copy { font: inherit; font-size: 0.8125rem; color: var(--ink); background: transparent; border: 1px solid var(--ink-soft); border-radius: 999px; padding: 2px 10px; cursor: pointer; }
+.btn { display: inline-block; font-weight: 700; text-decoration: none; background: var(--yellow); color: #1a1405; padding: 8px 16px; border-radius: 999px; }
+
+footer { background: var(--mast); color: var(--mast-ink); padding-inline: 16px; padding-block: 22px; }
+footer .in { max-width: 48rem; margin-inline: auto; display: flex; flex-direction: column; gap: 8px; }
+footer .strap { font-size: 1.1rem; }
+@media (max-width: 480px) { .strategy .row { grid-template-columns: minmax(0, 1fr); gap: 2px; } .give { grid-template-columns: minmax(0, 1fr); } }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="mast-in">
+    <img src="../img/crest.png" alt="East Hull Falcons Football Club crest" width="84" height="84">
+    <div class="mast-text">
+      <span class="strap">Teamwork, Respect &amp; Fair Play</span>
+      <h1>Under 10s</h1>
+      <span class="sub">Hull Boys Sunday League, U10 Group 7 · 2026/27</span>
+    </div>
+  </div>
+  <nav class="jump" aria-label="On this page">
+    <a href="#fixtures">Fixtures &amp; results</a>
+    <a href="#training">Training</a>
+    <a href="#matchday">Matchday info</a>
+    <a href="#playbook">Our playbook</a>
+    <a href="#support">Support us</a>
+  </nav>
+</header>
+
+<div class="wrap">
+
+  <section id="fixtures" aria-labelledby="h-fx">
+    <h2 id="h-fx">Fixtures &amp; results</h2>
+    <div id="next" class="next" aria-live="polite">
+      <div class="cal"><small>Sun</small><b>18</b><small>Oct</small></div>
+      <div class="opp">Hall Road Rangers Cobras</div>
+      <div class="tags"><span class="tag">Away</span><span class="tag">Friendly</span><span class="tag num">Kick-off 12:30</span></div>
+      <div class="soft">St Mary Queen of Martyrs</div>
+    </div>
+    <p class="soft">Every fixture is two 30-minute games. Our home pitch is at Alderman Cogan Primary School, kick-off 10:30. Scores show East Hull Falcons first.</p>
+    <ul class="fx" id="fxList"><li><span class="soft">Loading fixtures…</span></li></ul>
+    <p class="soft" id="fxUpdated"></p>
+  </section>
+
+  <section id="training" aria-labelledby="h-tr">
+    <h2 id="h-tr">Training calendar 2026/27</h2>
+    <div class="times">
+      <div class="legend">
+        <span><i class="v-ac"></i>Alderman Cogan: Fridays 6:00–7:00pm, Sundays 10:00–11:00am</span>
+        <span><i class="v-ml"></i>Malet Lambert: 6:00–7:00pm</span>
+        <span><i class="v-ph"></i>Season phase start and end dates</span>
+      </div>
+    </div>
+    <div class="terms" id="terms"></div>
+    <p class="soft">Sessions are confirmed in the team WhatsApp group. If your child can't make one, please let a coach know.</p>
+  </section>
+
+  <section id="matchday" aria-labelledby="h-md">
+    <h2 id="h-md">Matchday information</h2>
+    <p class="lede">We're based at Alderman Cogan Primary School, Whitworth Street, Hull, HU9 3HJ. The club is an England Football Accredited club, which means we meet the standards The FA sets for a safe, welcoming environment, with qualified volunteers and the right policies in place.</p>
+    <div class="panel">
+      <h3>Before you come</h3>
+      <ul class="plain">
+        <li>U10s home kick-off is <b>10:30am</b> (U9s also 10:30am).</li>
+        <li>There are no toilets or changing rooms on site. The nearest public toilets are at Woodford Leisure Centre or Morrisons on Holderness Road, about 5 minutes by car or 10 minutes on foot.</li>
+        <li>No smoking or vaping on site, and no dogs except assistance dogs.</li>
+        <li>Please take your rubbish home with you.</li>
+      </ul>
+    </div>
+    <h3>Getting to the pitch</h3>
+    <figure>
+      <img src="matchday-3.webp" width="1600" height="900" loading="lazy" alt="Aerial map of Alderman Cogan school: the entrance from Whitworth Street, the car park at the front, the field access to the right of the main building, and the 7v7 pitch on the far side of the field with the spectators' area along the touchline nearest the school fence.">
+      <figcaption>Enter from Whitworth Street and park at the front of the school. The pitches are behind the school, through the field gates to the right of the main building. Our 7v7 pitch is on the far side of the field, with spectators behind the respect barrier on the touchline nearest the school fence.</figcaption>
+    </figure>
+    <div class="panel">
+      <h3>Spectators' code of conduct</h3>
+      <p>We ask everyone watching to:</p>
+      <ul class="plain">
+        <li>Remember that children play for fun.</li>
+        <li>Applaud effort and good play as well as success.</li>
+        <li>Respect the referee's decisions, even when you don't agree with them.</li>
+        <li>Appreciate good play from whichever team it comes from.</li>
+        <li>Stay behind the touchline and within the designated spectators' area.</li>
+        <li>Let the coaches do their job and not confuse the players by telling them what to do.</li>
+        <li>Encourage the players to respect the opposition, referee and match officials.</li>
+        <li>Support positively, with encouragement, not criticism.</li>
+        <li>Never use or tolerate offensive, insulting or abusive language or behaviour.</li>
+      </ul>
+      <p><a href="../pdf/code-of-conduct-spectators.pdf">Read the full code of conduct (PDF)</a></p>
+    </div>
+    <div class="panel">
+      <h3>In an emergency</h3>
+      <p>Each of our teams has a qualified first aider, who will introduce themselves to the visiting team before kick-off and takes charge of any serious incident. Visiting teams should bring their own first aider for minor injuries.</p>
+      <ul class="plain">
+        <li><b>Call 999.</b> Venue: Alderman Cogan Primary School, HU9 3HJ.</li>
+        <li>School access: Whitworth Street, off Southcoates Avenue, opposite Woodford Leisure Centre on Holderness Road.</li>
+        <li>Field access: the school field entrance to the right of the main building, from the main car park.</li>
+        <li>Nearest hospital: Hull Royal Infirmary, Anlaby Road, Hull, HU3 2JZ.</li>
+        <li>Nearest walk-in and minor injuries: Bransholme Health Centre, 49 Goodhart Road, Hull, HU7 4DW.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="playbook" aria-labelledby="h-pb">
+    <h2 id="h-pb">Our playbook 2026–2030</h2>
+    <p class="lede">The playbook explains who we are, how we coach and develop the children, how we play on a matchday, and how you can help as a parent or guardian.</p>
+    <p><a class="btn" href="../pdf/u10s-playbook-2026-2030.pdf">Open the full playbook (PDF)</a></p>
+
+    <details class="pb" open>
+      <summary><span class="t">Our strategy</span><span class="n">Vision, mission, goals, values</span></summary>
+      <div class="body">
+        <div class="strategy">
+          <div class="row"><span class="k">Vision</span><span>To empower children to explore and find their potential through the power of football.</span></div>
+          <div class="row"><span class="k">Mission</span><span>To create an enjoyable place for children to express themselves without fear, encourage them to be creative and develop them as well-rounded individuals through experiencing the beautiful game.</span></div>
+          <div class="row"><span class="k">Values</span><span>Teamwork, respect and fair play.</span></div>
+        </div>
+        <div class="goals">
+          <div><b>People</b>To shape a community that supports the development of our children with skills and attributes for life, on and beyond the pitch.</div>
+          <div><b>Places</b>To create safe, fun and inclusive environments wherever we come together as a team or as a community.</div>
+          <div><b>Purpose</b>To strive for something greater than ourselves by being a club that serves and represents its community as a collective.</div>
+          <div><b>Players</b>To develop our children into the football players they want to be, helping them with their individual goals and aspirations.</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pb">
+      <summary><span class="t">How we play</span><span class="n">6 pages</span></summary>
+      <div class="body">
+        <p>We want confident footballers who can use both feet, are brave on the ball and try to keep it, whatever the pressure. We always encourage players to try, with the freedom to make mistakes: we are looking at long-term development, not the finished article right now.</p>
+        <figure><img src="playbook-7.webp" width="1600" height="900" loading="lazy" alt="Attacking and defending: what we ask of players with and without the ball."></figure>
+        <figure><img src="playbook-8.webp" width="1600" height="900" loading="lazy" alt="Phases of the game: technical components and principles of play for attacking and defending."></figure>
+        <figure><img src="playbook-9.webp" width="1600" height="900" loading="lazy" alt="7v7 formations we will explore: 1-3-2-1, 1-2-3-1 and 1-2-2-2."><figcaption>We'll use different formations so every child experiences different positions, ready for 9v9 and then 11v11.</figcaption></figure>
+        <figure><img src="playbook-10.webp" width="1600" height="900" loading="lazy" alt="Pitch thirds: defensive, middle and final thirds, with where players stand in a 7v7 shape."></figure>
+        <figure><img src="playbook-11.webp" width="1600" height="900" loading="lazy" alt="With the ball: support, play around, play through, play into, play onto and play beyond, by area of the pitch."></figure>
+        <figure><img src="playbook-12.webp" width="1600" height="900" loading="lazy" alt="Without the ball: apply pressure, delay the attack, defend the space, defend the area and defend the goal."></figure>
+      </div>
+    </details>
+
+    <details class="pb">
+      <summary><span class="t">How we coach</span><span class="n">3 pages</span></summary>
+      <div class="body">
+        <p>Our coaching principles: 90% of everything we do involves a football; we replicate the match pitch in training; and everything we do connects back to the game and matchday. Sessions balance constant, variable and random practice depending on the focus and the children's current level.</p>
+        <figure><img src="playbook-14.webp" width="1600" height="900" loading="lazy" alt="Planning and delivery: constant, variable and random practice, and our coaching principles of the ball, the pitch and the game."></figure>
+        <figure><img src="playbook-15.webp" width="1600" height="900" loading="lazy" alt="Coaching pitches: channels, thirds, quarters and safe zones, with examples."></figure>
+        <figure><img src="playbook-16.webp" width="1600" height="900" loading="lazy" alt="Player development across the Four Corners: technical, psychological, physical and social, and how we will develop each."></figure>
+      </div>
+    </details>
+
+    <details class="pb">
+      <summary><span class="t">Seasons &amp; formats</span><span class="n">Through to 2029/30</span></summary>
+      <div class="body">
+        <p>Each season the number of players, the pitch, the goals and sometimes the ball get bigger. We pride ourselves on equal game time. If your child doesn't feel like playing, or something is affecting them, please talk to us: their health and wellbeing comes first.</p>
+        <div class="formats">
+          <table>
+            <thead><tr><th>U10s</th><th>Format</th><th>Pitch</th><th>Goal</th><th>Ball</th></tr></thead>
+            <tbody>
+              <tr><td>2025/26</td><td>7v7</td><td>60×40 yd</td><td>12×6 ft</td><td>Size 3</td></tr>
+              <tr><td class="now">2026/27</td><td class="now">7v7</td><td class="now">60×40 yd</td><td class="now">12×6 ft</td><td class="now">Size 3</td></tr>
+              <tr><td>2027/28</td><td>9v9</td><td>80×50 yd</td><td>16×7 ft</td><td>Size 4</td></tr>
+              <tr><td>2028/29</td><td>9v9</td><td>80×50 yd</td><td>16×7 ft</td><td>Size 4</td></tr>
+              <tr><td>2029/30</td><td>11v11</td><td>100×60 yd</td><td>21×6 ft</td><td>Size 4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </details>
+
+    <details class="pb">
+      <summary><span class="t">How to be the best players</span><span class="n">By position</span></summary>
+      <div class="body">
+        <p>These are the messages we share with the children in each position. Please help them understand these at home too.</p>
+        <figure><img src="playbook-21.webp" width="1600" height="900" loading="lazy" alt="How to be the best players: messages for goalkeepers, defenders, midfielders and attackers."></figure>
+      </div>
+    </details>
+
+    <details class="pb" open>
+      <summary><span class="t">How you can help us and them</span><span class="n">Top tips for parents</span></summary>
+      <div class="body">
+        <div class="tips">
+          <div class="panel"><h3>At training</h3><ul>
+            <li>Make sure they show the values and behaviours we want to see.</li>
+            <li>Let the coaches coach, and don't contradict the messages we give.</li>
+            <li>Trust the process: we're developing a lasting love of football, not just a team for the weekend.</li>
+            <li>Don't focus on mistakes. We're here to build confidence and resilience.</li>
+            <li>Watch your body language and how you talk to them if they look to you.</li>
+            <li>Every child develops at their own pace. Don't judge yours or anyone else's.</li>
+          </ul></div>
+          <div class="panel"><h3>On matchday</h3><ul>
+            <li>Don't be a touchline coach. They aren't players on a PlayStation.</li>
+            <li>Remember they may not yet be able to do what we're all thinking.</li>
+            <li>Praise effort. At this age it matters more than execution.</li>
+            <li>Accept mistakes positively and encourage them to try again.</li>
+            <li>If the coach is quiet, that's deliberate: it lets the children make their own decisions.</li>
+            <li>Follow our codes of conduct and help make it welcoming for everyone.</li>
+          </ul></div>
+          <div class="panel"><h3>At home</h3><ul>
+            <li>Ask how it made them feel and what went well, not about the result or a missed chance.</li>
+            <li>Support them emotionally and encourage them to represent themselves and the club well.</li>
+            <li>Help them practise at home and build a passion for the game.</li>
+            <li>Avoid rewards like money for goals, which can encourage selfish play.</li>
+            <li>Encourage them to watch games, highlights and tutorials to learn.</li>
+          </ul></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="pb">
+      <summary><span class="t">Matchday rules</span><span class="n">4 pages</span></summary>
+      <div class="body">
+        <p>No offsides at U10. All free kicks are direct except for a deliberate header. Retreat line: the team without the ball drops into its own half for a goal kick. Power play: a team losing by four goals can add an extra player.</p>
+        <figure><img src="playbook-24.webp" width="1600" height="900" loading="lazy" alt="The pitch: 60 by 40 yards, 12 by 6 foot goals, size 3 ball, with coaches and substitutes opposite the spectators behind the respect barrier."></figure>
+        <figure><img src="playbook-25.webp" width="1600" height="900" loading="lazy" alt="Matchday rules for kick-offs, touchline pass or dribble-ins, and goal kicks."></figure>
+        <figure><img src="playbook-26.webp" width="1600" height="900" loading="lazy" alt="Matchday rules for free kicks, penalty kicks and corner kicks."></figure>
+        <figure><img src="playbook-27.webp" width="1600" height="900" loading="lazy" alt="Fouls and misconduct, offsides and the power play law."></figure>
+      </div>
+    </details>
+  </section>
+
+  <section id="support" aria-labelledby="h-sp">
+    <h2 id="h-sp">Sponsorship &amp; donations</h2>
+    <p class="lede">East Hull Falcons is run entirely by volunteers. Sponsors and donations pay for the kit, facilities and training that keep football safe, fun and accessible for our children.</p>
+    <div class="give">
+      <img src="gofundme-qr.png" width="120" height="120" alt="QR code for the East Hull Falcons GoFundMe page">
+      <div class="panel" style="padding:0;background:none">
+        <h3>Make a one-off donation</h3>
+        <p>Scan the code or use our GoFundMe page to help keep the club running and meeting the standards we're held to.</p>
+        <p><a class="btn" href="https://gofund.me/712adcb5">Donate on GoFundMe</a></p>
+      </div>
+    </div>
+    <p>For businesses and organisations, we're keen to build lasting partnerships where our values align. You could sponsor one item, a whole area, or a mix:</p>
+    <div class="areas">
+      <div class="panel"><h3>Kit &amp; equipment</h3><ul><li>Playing kit</li><li>Training kit</li><li>Tracksuits &amp; winter essentials</li><li>First aid kit &amp; equipment</li></ul></div>
+      <div class="panel"><h3>Celebrating players</h3><ul><li>Training and matchday awards</li><li>End-of-season presentation trophies</li></ul></div>
+      <div class="panel"><h3>Facilities</h3><ul><li>Pitch improvement training &amp; equipment</li><li>Funding towards toilet and catering facilities</li><li>Catering equipment</li><li>Restroom, cleaning &amp; sanitation products</li></ul></div>
+      <div class="panel"><h3>Sustainability</h3><ul><li>Reusable water bottles</li><li>Recycling bins</li><li>Used kit &amp; equipment bank</li></ul></div>
+      <div class="panel"><h3>Environment &amp; experience</h3><ul><li>Welcome signage &amp; key message boards</li><li>Spectator areas set back from the pitch</li><li>Shelter &amp; seating for players</li><li>Banners and flags</li></ul></div>
+      <div class="panel"><h3>Coaches &amp; volunteers</h3><ul><li>First aid training</li><li>Safeguarding training</li><li>Introduction to coaching football</li><li>UEFA C coaching qualification</li><li>Volunteer education &amp; training</li></ul></div>
+    </div>
+    <div class="panel">
+      <h3>What your sponsorship can achieve</h3>
+      <ul class="plain">
+        <li>Your logo on kit, equipment or apparel seen by our members and the communities we play in.</li>
+        <li>Investment in people developing skills that add value to their lives and others'.</li>
+        <li>Exposure across our social media channels.</li>
+        <li>Recognition for the social and environmental good you're supporting.</li>
+      </ul>
+      <p>To talk about sponsorship, contact Tom Lee:</p>
+      <p class="line"><a class="val" href="tel:07378775496">07378 775496</a> <button class="copy" type="button" data-copy="07378775496">Copy</button></p>
+      <p class="line"><a class="val" href="mailto:tomlee1150@gmail.com">tomlee1150@gmail.com</a> <button class="copy" type="button" data-copy="tomlee1150@gmail.com">Copy</button></p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="in">
+    <span class="strap">Teamwork, Respect &amp; Fair Play</span>
+    <p>Follow us on Facebook (East Hull Falcons U9s &amp; U10s) and Instagram (<a href="https://www.instagram.com/east_hull_falcons/">@east_hull_falcons</a>).</p>
+    <p><a href="../">Safeguarding contacts and club policies</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var M = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var DY = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  function d(iso) { var p = iso.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
+  var t = new Date(); var today = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0");
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+  function res(g) { return g[0] > g[1] ? "W" : g[0] === g[1] ? "D" : "L"; }
+
+  /* fixtures */
+  fetch("fixtures.json", {cache: "no-cache"}).then(function (r) { return r.json(); }).then(function (data) {
+    var fx = data.fixtures;
+    var up = fx.filter(function (f) { return f.date >= today && f.type !== "Cancelled"; });
+    var nx = up[0];
+    if (nx) {
+      var dd = d(nx.date);
+      document.getElementById("next").innerHTML = '<div class="cal"><small>' + DY[dd.getDay()] + '</small><b class="num">' + dd.getDate() + '</b><small>' + M[dd.getMonth()] + '</small></div>' +
+        '<div class="opp">' + esc(nx.opponent) + '</div>' +
+        '<div class="tags"><span class="tag' + (nx.ha === "Home" ? " home" : "") + '">' + esc(nx.ha) + '</span>' + (nx.type !== "League" ? '<span class="tag">' + esc(nx.type) + '</span>' : "") + '<span class="tag num">Kick-off ' + esc(nx.ko || "TBC") + '</span></div>' +
+        '<div class="soft">' + esc(nx.venue) + '</div>';
+    } else {
+      document.getElementById("next").innerHTML = '<div class="opp" style="grid-column:1/-1">No more fixtures this phase</div>';
+    }
+    document.getElementById("fxList").innerHTML = fx.map(function (f) {
+      var dd = d(f.date), c = f.type === "Cancelled";
+      var r = "";
+      if (c) r = '<span class="tag off">Cancelled</span>';
+      else if (f.g1 || f.g2) r = [f.g1, f.g2].filter(Boolean).map(function (g, i) { return '<span class="score ' + res(g) + '" title="Game ' + (i + 1) + '">' + g[0] + "–" + g[1] + "</span>"; }).join("");
+      else r = '<span class="tag num">' + esc(f.ko || "TBC") + '</span>';
+      return '<li class="' + (c ? "cancel" : "") + '"><span class="d num">' + dd.getDate() + " " + M[dd.getMonth()] + '<span>' + DY[dd.getDay()] + '</span></span>' +
+        '<span><span class="o">' + esc(f.opponent) + '</span>' + (f.type !== "League" && !c ? ' <span class="tag">' + esc(f.type) + '</span>' : "") + '<br><span class="w">' + esc(f.ha) + " · " + esc(f.venue) + '</span></span>' +
+        '<span class="r">' + r + '</span></li>';
+    }).join("");
+    if (data.updated) { var u = d(data.updated); document.getElementById("fxUpdated").textContent = "Updated " + u.getDate() + " " + M[u.getMonth()] + " " + u.getFullYear() + "."; }
+  }).catch(function () {
+    document.getElementById("fxList").innerHTML = '<li><span class="soft">Fixtures couldn\'t load. Please refresh the page.</span></li>';
+  });
+
+  /* training calendar: venue ac = Alderman Cogan, ml = Malet Lambert, ph = phase date */
+  var terms = [
+    ["Summer 2026", [["2026-07-10","ac"],["2026-07-12","ac"],["2026-07-17","ac"],["2026-07-19","ac"],["2026-07-24","ac"],["2026-07-26","ac"],["2026-07-31","ac"],["2026-08-02","ac"],["2026-08-07","ac"],["2026-08-09","ac"],["2026-08-14","ac"],["2026-08-16","ac"],["2026-08-21","ac"],["2026-08-23","ac"],["2026-08-28","ac"],["2026-08-30","ac"]]],
+    ["Autumn 2026", [["2026-09-04","ac"],["2026-09-06","ac"],["2026-09-11","ac"],["2026-09-13","ac"],["2026-09-18","ac"],["2026-09-20","ph"],["2026-09-25","ac"],["2026-10-02","ac"],["2026-10-09","ac"],["2026-10-16","ml"],["2026-10-23","ml"],["2026-10-30","ml"],["2026-11-06","ml"],["2026-11-13","ml"],["2026-11-20","ml"],["2026-11-22","ph"],["2026-11-27","ml"]]],
+    ["Winter 2026/27", [["2026-12-04","ml"],["2026-12-11","ml"],["2027-01-08","ml"],["2027-01-15","ml"],["2027-01-22","ml"],["2027-01-29","ml"],["2027-02-05","ml"],["2027-02-12","ml"],["2027-02-19","ml"],["2027-02-21","ph"],["2027-02-26","ml"]]],
+    ["Spring 2027", [["2027-03-05","ml"],["2027-03-12","ml"],["2027-03-19","ml"],["2027-04-02","ac"],["2027-04-09","ac"],["2027-04-16","ac"],["2027-04-23","ac"],["2027-04-30","ac"],["2027-05-07","ac"],["2027-05-09","ph"],["2027-05-14","ac"]]]
+  ];
+  var nextT = null;
+  terms.forEach(function (tm) { tm[1].forEach(function (s) { if (!nextT && s[1] !== "ph" && s[0] >= today) nextT = s[0]; }); });
+  var label = {ac: "Alderman Cogan", ml: "Malet Lambert", ph: "Phase start/end"};
+  document.getElementById("terms").innerHTML = terms.map(function (tm) {
+    return '<div class="term"><h3>' + tm[0] + '</h3><ul>' + tm[1].map(function (s) {
+      var dd = d(s[0]), cls = s[0] < today ? "past" : s[0] === nextT ? "nextup" : "";
+      var day = dd.getDay() === 0 ? "Sunday" : "Friday";
+      return '<li class="' + cls + '"><i class="v-' + s[1] + '" title="' + label[s[1]] + '"></i><span>' + day + " " + dd.getDate() + " " + M[dd.getMonth()] + (s[1] === "ph" ? " (phase date)" : "") + '</span></li>';
+    }).join("") + '</ul></div>';
+  }).join("");
+
+  /* copy buttons */
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".copy"); if (!b) return;
+    var text = b.getAttribute("data-copy");
+    var done = function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1600); };
+    var fallback = function () { var v = b.parentElement.querySelector(".val"); if (!v) return; var r = document.createRange(); r.selectNodeContents(v); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (err) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

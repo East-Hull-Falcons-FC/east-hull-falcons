@@ -1,0 +1,133 @@
+{
+ "updated": "2026-10-12",
+ "fixtures": [
+  {
+   "date": "2026-09-20",
+   "opponent": "Hall Road Rangers Cobras",
+   "ha": "Away",
+   "venue": "St Mary Queen of Martyrs",
+   "ko": "12:30",
+   "type": "League",
+   "g1": [
+    0.0,
+    3.0
+   ],
+   "g2": [
+    0.0,
+    9.0
+   ]
+  },
+  {
+   "date": "2026-09-27",
+   "opponent": "North Ferriby Whites",
+   "ha": "Home",
+   "venue": "Alderman Cogan School",
+   "ko": "09:15",
+   "type": "League",
+   "g1": [
+    0.0,
+    5.0
+   ],
+   "g2": [
+    0.0,
+    4.0
+   ]
+  },
+  {
+   "date": "2026-10-04",
+   "opponent": "Market Weighton Yellows",
+   "ha": "Away",
+   "venue": "Market Weighton School 3G",
+   "ko": "09:30",
+   "type": "League",
+   "g1": [
+    1.0,
+    1.0
+   ],
+   "g2": [
+    3.0,
+    0.0
+   ]
+  },
+  {
+   "date": "2026-10-11",
+   "opponent": "Withernsea AFC Avengers",
+   "ha": "Away",
+   "venue": "Withernsea Primary School",
+   "ko": "10:00",
+   "type": "Cancelled",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-10-18",
+   "opponent": "Hall Road Rangers Cobras",
+   "ha": "Away",
+   "venue": "St Mary Queen of Martyrs",
+   "ko": "12:30",
+   "type": "Friendly",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-10-18",
+   "opponent": "FC Esperanza 1617",
+   "ha": "Home",
+   "venue": "Alderman Cogan School",
+   "ko": "10:30",
+   "type": "Cancelled",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-10-25",
+   "opponent": "AFC Tickton Merlins",
+   "ha": "Home",
+   "venue": "Alderman Cogan School",
+   "ko": "10:30",
+   "type": "League",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-11-01",
+   "opponent": "Pelican Rangers Tigers",
+   "ha": "Away",
+   "venue": "Pelican Park",
+   "ko": "10:00",
+   "type": "League",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-11-08",
+   "opponent": "Pickering Eagles",
+   "ha": "Home",
+   "venue": "Alderman Cogan School",
+   "ko": "10:30",
+   "type": "League",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-11-15",
+   "opponent": "Hessle Sporting Jackals",
+   "ha": "Away",
+   "venue": "King George V, Hessle",
+   "ko": "10:30",
+   "type": "League",
+   "g1": null,
+   "g2": null
+  },
+  {
+   "date": "2026-11-22",
+   "opponent": "Barham AFC",
+   "ha": "Away",
+   "venue": "Alderman Kneeshaw Park",
+   "ko": "11:00",
+   "type": "League",
+   "g1": null,
+   "g2": null
+  }
+ ]
+}
