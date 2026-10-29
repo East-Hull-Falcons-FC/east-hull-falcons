@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12",
+ "updated": "2026-10-29",
  "fixtures": [
   {
    "date": "2026-09-20",
@@ -66,8 +66,14 @@
    "venue": "St Mary Queen of Martyrs",
    "ko": "12:30",
    "type": "Friendly",
-   "g1": null,
-   "g2": null
+   "g1": [
+    1.0,
+    1.0
+   ],
+   "g2": [
+    0.0,
+    3.0
+   ]
   },
   {
    "date": "2026-10-18",
@@ -85,7 +91,7 @@
    "ha": "Home",
    "venue": "Alderman Cogan School",
    "ko": "10:30",
-   "type": "League",
+   "type": "Postponed",
    "g1": null,
    "g2": null
   },
@@ -94,7 +100,7 @@
    "opponent": "Pelican Rangers Tigers",
    "ha": "Away",
    "venue": "Pelican Park",
-   "ko": "10:00",
+   "ko": "12:00",
    "type": "League",
    "g1": null,
    "g2": null
