@@ -81,6 +81,7 @@ ul.plain { padding-left: 1.3em; display: flex; flex-direction: column; gap: 6px;
 .tag { font-size: 0.8125rem; font-weight: 700; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--rule); }
 .tag.home { background: var(--yellow); color: #1a1405; border-color: var(--yellow); }
 .tag.off { color: var(--loss); border-color: var(--loss); }
+.tag.pp { color: var(--gold-ink); border-color: var(--gold); }
 
 /* fixtures list */
 .fx { list-style: none; padding: 0; display: flex; flex-direction: column; }
@@ -188,7 +189,7 @@ footer .strap { font-size: 1.1rem; }
       <div class="tags"><span class="tag">Away</span><span class="tag">Friendly</span><span class="tag num">Kick-off 12:30</span></div>
       <div class="soft">St Mary Queen of Martyrs, HU7 4BS</div>
     </div>
-    <p class="soft">Every fixture is two 30-minute games. Our home pitch is at Alderman Cogan Primary School, kick-off 10:30. Scores show East Hull Falcons first. Tap a postcode to open the venue in Google Maps.</p>
+    <p class="soft">Every fixture is two 30-minute games. Postponed matches are added back with their new date once rearranged. Our home pitch is at Alderman Cogan Primary School, kick-off 10:30. Scores show East Hull Falcons first. Tap a postcode to open the venue in Google Maps.</p>
     <ul class="fx" id="fxList"><li><span class="soft">Loading fixtures…</span></li></ul>
     <p class="soft" id="fxUpdated"></p>
   </section>
@@ -439,7 +440,7 @@ footer .strap { font-size: 1.1rem; }
   /* fixtures */
   fetch("fixtures.json", {cache: "no-cache"}).then(function (r) { return r.json(); }).then(function (data) {
     var fx = data.fixtures;
-    var up = fx.filter(function (f) { return f.date >= today && f.type !== "Cancelled"; });
+    var up = fx.filter(function (f) { return f.date >= today && f.type !== "Cancelled" && f.type !== "Postponed"; });
     var nx = up[0];
     if (nx) {
       var dd = d(nx.date);
@@ -451,13 +452,14 @@ footer .strap { font-size: 1.1rem; }
       document.getElementById("next").innerHTML = '<div class="opp" style="grid-column:1/-1">No more fixtures this phase</div>';
     }
     document.getElementById("fxList").innerHTML = fx.map(function (f) {
-      var dd = d(f.date), c = f.type === "Cancelled";
+      var dd = d(f.date), c = f.type === "Cancelled", pp = f.type === "Postponed";
       var r = "";
       if (c) r = '<span class="tag off">Cancelled</span>';
+      else if (pp) r = '<span class="tag pp">Postponed</span>';
       else if (f.g1 || f.g2) r = [f.g1, f.g2].filter(Boolean).map(function (g, i) { return '<span class="score ' + res(g) + '" title="Game ' + (i + 1) + '">' + g[0] + "–" + g[1] + "</span>"; }).join("");
       else r = '<span class="tag num">' + esc(f.ko || "TBC") + '</span>';
       return '<li class="' + (c ? "cancel" : "") + '"><span class="d num">' + dd.getDate() + " " + M[dd.getMonth()] + '<span>' + DY[dd.getDay()] + '</span></span>' +
-        '<span><span class="o">' + esc(f.opponent) + '</span>' + (f.type !== "League" && !c ? ' <span class="tag">' + esc(f.type) + '</span>' : "") + '<br><span class="w">' + esc(f.ha) + " · " + venueHtml(f.venue) + '</span></span>' +
+        '<span><span class="o">' + esc(f.opponent) + '</span>' + (f.type !== "League" && !c && !pp ? ' <span class="tag">' + esc(f.type) + '</span>' : "") + '<br><span class="w">' + esc(f.ha) + " · " + venueHtml(f.venue) + '</span></span>' +
         '<span class="r">' + r + '</span></li>';
     }).join("");
     if (data.updated) { var u = d(data.updated); document.getElementById("fxUpdated").textContent = "Updated " + u.getDate() + " " + M[u.getMonth()] + " " + u.getFullYear() + "."; }
