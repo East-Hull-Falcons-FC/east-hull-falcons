@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-16",
  "fixtures": [
   {
    "date": "2026-09-20",
@@ -134,8 +134,14 @@
    "venue": "King George V, Hessle",
    "ko": "10:30",
    "type": "League",
-   "g1": null,
-   "g2": null
+   "g1": [
+    0.0,
+    0.0
+   ],
+   "g2": [
+    1.0,
+    2.0
+   ]
   },
   {
    "date": "2026-11-22",
